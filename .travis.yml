@@ -18,8 +18,8 @@ jobs:
      - docker image push amenezes/$IMAGE_NAME:$IMAGE_TAG
    - script:
      - echo "building latest image"
-     - docker image build -t amenezes/$IMAGE_NAME: .
-     - docker image push amenezes/$IMAGE_NAME:
+     - docker image build -t amenezes/$IMAGE_NAME .
+     - docker image push amenezes/$IMAGE_NAME
 env:
   global:
    - IMAGE_TAG=stable
