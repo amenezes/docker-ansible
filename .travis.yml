@@ -13,8 +13,13 @@ jobs:
  include:
    - stage: docker build image
    - script:
+     - echo "building $IMAGE_NAME image"
      - docker image build -t amenezes/$IMAGE_NAME:$IMAGE_TAG .
      - docker image push amenezes/$IMAGE_NAME:$IMAGE_TAG
+   - script:
+     - echo "building latest image"
+     - docker image build -t amenezes/$IMAGE_NAME: .
+     - docker image push amenezes/$IMAGE_NAME:
 env:
   global:
    - IMAGE_TAG=stable
